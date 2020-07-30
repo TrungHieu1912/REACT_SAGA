@@ -5,7 +5,7 @@ const { Column } = Table;
 class Items extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.defaultState = {
             data: {
                 name: "",
                 number: "",
@@ -17,8 +17,8 @@ class Items extends Component {
                 class: ""
             },
             dataSearch: "",
-            
         }
+        this.state = this.defaultState;
     }
     handleChange() {
         this.props.addItem(this.state.data)
@@ -39,13 +39,13 @@ class Items extends Component {
             dataUpdate: item
         })
     }
-    test_(){
-
+    setValue_() {
+        this.setState(this.defaultState);
     }
     render() {
         let listData = this.props.items;
         console.log('listData', listData)
-        console.log('log',this.state.dataUpdate);
+        console.log('log', this.state.dataUpdate);
         const style = { paddingLeft: '20px' };
         const style_1 = { display: 'flex', justifyContent: 'start', fontWeight: 'bold', }
 
@@ -82,8 +82,12 @@ class Items extends Component {
                         </Col>
                         {/* ----------------------------------------------------------------------------------------- */}
                         <Col className="gutter-row" style={{ minWidth: '150' }}>
-                            <div>&nbsp;</div>
-                            <div ><Input name='class' className="input_" value={this.state.dataSearch} onChange={(e) => this.setState({ dataSearch: e.target.value })} /></div>
+                            <div style={style_1}>Tìm kiếm</div>
+                            <div ><Input name='class' className="input_" 
+                            value={this.state.dataSearch} 
+                            onChange={(e) => {this.setState({ dataSearch: e.target.value },
+                            ()=>{this.props.searchDispatch(this.state.dataSearch)})
+                        }} /></div>
 
                         </Col>
                         <Col className="gutter-row" style={{ minWidth: '150' }}>
@@ -117,10 +121,11 @@ class Items extends Component {
                         <Col className="gutter-row" style={{ minWidth: '150' }}>
                             <div >&nbsp;</div>
                             <div ><Button type="primary"
-                            //   onClick={() => this.props.updateDispatch(this.state.dataUpdate)}
+                                //   onClick={() => this.props.updateDispatch(this.state.dataUpdate)}
                                 onClick={() => {
                                     this.props.updateDispatch(this.state.dataUpdate)
-                                    this.test_()
+                                    this.setValue_()
+                                    // clearTimeout()
                                 }}
                             >Sửa</Button></div>
                         </Col>
