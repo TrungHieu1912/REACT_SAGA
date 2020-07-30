@@ -1,0 +1,24 @@
+.main_table{
+    
+    overflow-y: auto;
+}
+
+/* .ctn_form_{
+    background-color:#ccc;
+    padding:16px;
+} */
+.form_{
+    
+    
+    background-color:white;
+    padding: 8px 16px 16px;
+    border-radius: 8px;
+}
+.form_1{
+    background-color:white;
+    padding:16px;
+    border-radius: 8px;
+}
+/* .form_1{
+    height: 800px;
+} */
