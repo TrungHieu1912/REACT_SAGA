@@ -83,12 +83,13 @@ class Items extends Component {
                         {/* ----------------------------------------------------------------------------------------- */}
                         <Col className="gutter-row" style={{ minWidth: '150' }}>
                             <div style={style_1}>Tìm kiếm</div>
-                            <div ><Input name='class' className="input_" 
-                            value={this.state.dataSearch} 
-                            onChange={(e) => {this.setState({ dataSearch: e.target.value },
-                            ()=>{this.props.searchDispatch(this.state.dataSearch)})
-                        }} /></div>
-
+                            <div ><Input name='class' className="input_"
+                                value={this.state.dataSearch}
+                                onChange={(e) => {
+                                    this.setState({ dataSearch: e.target.value },
+                                        () => { this.props.searchDispatch(this.state.dataSearch) })
+                                }} />
+                            </div>
                         </Col>
                         <Col className="gutter-row" style={{ minWidth: '150' }}>
                             <div>&nbsp;</div>
