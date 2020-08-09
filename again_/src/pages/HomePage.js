@@ -39,7 +39,7 @@ class HomePage extends React.Component {
                   <Link to="/items">Chức năng</Link>
                 </Menu.Item>
                 <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-                  <Link to="/hai">Chuyển trang test1</Link>
+                  <Link to="/item_2">Chuyển trang test1</Link>
                 </Menu.Item>
                 <Menu.Item key="3" icon={<UploadOutlined />}>
                   <Link to="/ba">Chuyển trang test2</Link>
@@ -66,7 +66,7 @@ class HomePage extends React.Component {
                     <div><ItemPage ></ItemPage></div>
                     </Route>
                     
-                    <Route path="/hai">
+                    <Route path="/item_2">
 
                     </Route>
                     <Route path="/ba">

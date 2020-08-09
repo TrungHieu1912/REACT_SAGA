@@ -4,7 +4,7 @@ class ItemPage extends Component {
     render() {
         return (
             <div>
-                <ItemContainer />
+                <ItemContainer />    
             </div>
         );
     }

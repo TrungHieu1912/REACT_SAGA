@@ -4,9 +4,6 @@ import { connect } from 'react-redux'
 import * as actions from '../actions/ItemPageActions'
 
 class ItemPageContainer extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
 
     componentDidMount() {
         this.props.initLoad()
